@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build:bots && tsc && vite build",
+    "build": "npm i --save-dev @types/jest && npm run build:bots && tsc && vite build",
     "build:bots": "npm run clean && tsc --project tsconfig-bots.json && node --no-warnings esbuild-script.mjs && node --loader ts-node/esm src/scripts/deploy-bots.ts",
     "clean": "rimraf dist",
     "dev": "vite",
@@ -36,6 +36,7 @@
     "@medplum/mock": "4.3.6",
     "@medplum/react": "4.3.6",
     "@tabler/icons-react": "3.34.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "20.19.9",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
